@@ -70,3 +70,25 @@ while x < 4:
 
 print("______end of line______")
 
+# Handle exceptions with a try/except block 
+try:
+    while x < 8:
+        print("X is currently: ",x)
+        x += 1
+    # use `raise` to raise an error 
+    raise IndexError("This is an index error")
+except IndexError as e:
+    pass # Refrain from not providing a recovery exception options
+except (TypeError, IndexError):
+    pass # multiple exceptions can be processed jointly
+else:
+    pass # optional clause to the try/except block. Must follow all except blocks.
+    print("All good") #Runs only if the code in try raises no exceptions
+finally: # it executes under all circumstances 
+    print("We can clean up resources here")
+
+
+# You can use `with` stetement intead of try/finally to cleanup resources 
+with open("myfile.txt") as f:
+    for line in f:
+        print(line)
