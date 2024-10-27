@@ -46,3 +46,27 @@ for i in range(4,8,2):
 
 print("______end of line______")
 
+
+# Loop over a list to retrieve both the index and the value of each list item
+
+animals = ["dog", "cat", "mouse"]
+for i, value in enumerate(animals):
+    print(i, value)
+
+print("______end of line______")
+
+cart = ["washing soap", "detergent","sponge", "hand gloves"]
+for i, value in enumerate(cart):
+    print("{} {} is part of your shop items".format(i+1,value.capitalize()))
+
+print("______end of line______")
+
+# While loops go until a condition is no longer met 
+
+x = 0
+while x < 4:
+    print(x)
+    x += 1 # this is a shorthand for x = x + 1 
+
+print("______end of line______")
+
