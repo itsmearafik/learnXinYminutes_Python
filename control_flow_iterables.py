@@ -11,3 +11,13 @@ elif some_var < 10:
 else:
     print("some_var is indeed 10.")
 
+
+""" For loops iterate over lists """
+mammals = ["dog", "cat", "mouse"]
+
+for animal in mammals:
+    print("{} is a mammal".format(animal))
+
+
+for cart in ["washing soap", "detergent","sponge", "hand gloves"]:
+    print("{} is part of your shop items".format(cart).capitalize())
