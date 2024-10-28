@@ -173,6 +173,9 @@ for i in our_iterator:
 print("______end of line______")
 # You can grab all the elements of an iterable or iterator by call of a list()
 list(our_iterable)
-
+print(list(our_iterable))
 print("______end of line______")
 list(our_iterator)
+print(list(our_iterator))
+
+print("______end of line______")
