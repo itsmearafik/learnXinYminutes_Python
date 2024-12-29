@@ -72,4 +72,51 @@ if __name__ == "__main__":
 
 # Multiple Inheritance 
 
+class Bat:
+    species = "Baty"
+    def __init__(self, can_fly=True):
+        self.fly = can_fly
 
+    # This class also has a say method 
+    def say(self, msg):
+        msg = "... ... ..."
+        return msg
+    
+    # And its own method as well
+    def sonar(self):
+        return "))) ... ((("
+    
+b = Bat()
+print(b.say("hello"))
+print(b.fly)
+
+# Another class thaat inherits from superhero and bat 
+from . import Superhero
+from . import Bat 
+
+# defining batman as a child that inherits from both superhero and bat 
+class Batman(Superhero, Bat):
+    def __init__(self, *args, **kwargs):
+        # use `super` to inherit from a single parent and use 
+        # __init__ to inherit from multiple parents / calling all ancestors
+        Superhero.__init__(self, "anonymous", movie=True,
+                        superpowers=["Wealthy"], *args, **kwargs)
+        Bat.__init__(self, *args, can_fly=False, **kwargs)
+        # Overide the value for the name attribute
+        self.name = "Sad Affleck"
+    
+    def sing(self):
+        return "nan nan nan nan nan batman!"
+    
+
+# method resolution order (MRO) 
+print(Batman.__mro__)
+
+# call  parent method whiles using its own class attributes
+print(sup.get_species())
+
+# call overridden method 
+print(sup.sing())
+
+# call method from human 
+sup.say("I agree")
